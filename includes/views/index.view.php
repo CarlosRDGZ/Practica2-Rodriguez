@@ -29,7 +29,7 @@
 				    <tr>
 				      <th>#</th>
 				      <th>Nombre</th>
-				      <th>Fecha</th>
+				      <th>Dirección</th>
 				      <th><button ng-click="add()" class="btn btn-success btn-sm"><i class="fa fa-file-o" aria-hidden="true"></i></button>&nbsp;Nuevo</th>
 				    </tr>
 				  </thead>
