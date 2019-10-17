@@ -21,7 +21,7 @@ setlocale(LC_MONETARY, 'en_US');
 defined('DATABASE_HOST') ? NULL : define('DATABASE_HOST', 'localhost');
 defined('DATABASE_NAME') ? NULL : define('DATABASE_NAME', 'myInfo');
 defined('DATABASE_USER') ? NULL : define('DATABASE_USER', 'root');
-defined('DATABASE_PASSWORD') ? NULL : define('DATABASE_PASSWORD', 'root');
+defined('DATABASE_PASSWORD') ? NULL : define('DATABASE_PASSWORD', '');
 
 ////////////////////////////////////////////////////////////////////////////////
 // Define absolute application paths

@@ -1,11 +1,11 @@
 <?php require_once(VIEW_PATH.'header.inc.php'); ?>
 
 	
-	<link href="<?php echo $url;?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<script src="<?php echo $url;?>assets/js/jquery.js"></script>
-	<script src="<?php echo $url;?>assets/js/bootstrap.min.js"></script>
-	<script src="<?php echo $url;?>assets/js/tooltip.js"></script>
-	<script src="<?php echo $url;?>assets/js/angular.js"></script>
+	<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/tooltip.js"></script>
+	<script src="assets/js/angular.js"></script>
 
 	<div class="container">
       <div class="row">
@@ -90,4 +90,4 @@
 	</div>
 
 <?php require_once(VIEW_PATH.'footer.inc.php'); ?>
-<script src="<?php echo $url;?>personas.js"></script>
+<script src="personas.js"></script>
