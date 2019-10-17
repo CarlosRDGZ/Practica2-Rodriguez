@@ -5,7 +5,7 @@ class Personas {
 	public $id;
 	public $nombre;
 	public $direccion;
-	public $fechaCreacion;
+	public $telefono;
 	
 	public static function getBySql($sql) {
 		
@@ -43,10 +43,11 @@ class Personas {
 	public static function getInstance($object) {		
 		$instance = new self();
 		
-		if(isset($object->nombre) && isset($object->direccion)) 
+		if(isset($object->nombre) && isset($object->direccion) && isset($object->telefono)) 
 		{
 			$instance->nombre = $object->nombre;
 			$instance->direccion = $object->direccion;
+			$instance->telefono = $object->telefono;
 			return $instance;
 		} else {
 			throw new Exception('Error al crear la instancia');
@@ -58,20 +59,20 @@ class Personas {
 	}
 
 	public static function getInfoUpdate($id) {
-		$sql = "SELECT id, nombre, direccion from datos where id = " . $id;
+		$sql = "SELECT id, nombre, telefono, direccion from datos where id = " . $id;
 		
 		$database = new Database();
 		$statement = $database->stmt_init();
 		
 		if ($statement->prepare($sql)) {
 			$statement->execute();
-			$statement->bind_result($id, $nombre, $direccion);
+			$statement->bind_result($id, $nombre, $telefono, $direccion);
 			$statement->fetch();
 			$statement->close();
 		}
 		$database->close();
 
-		$object = (object) array('idPersona' => $id, 'nombre' => $nombre, 'direccion' => $direccion);
+		$object = (object) array('idPersona' => $id, 'nombre' => $nombre, 'telefono' => $telefono, 'direccion' => $direccion);
 		return $object;
 	}
 
@@ -99,7 +100,7 @@ class Personas {
 			$statement->execute();
 			
 			// Bind variable to prepared statement
-			$statement->bind_result($id, $nombre, $direccion, $fechaCreacion);
+			$statement->bind_result($id, $nombre, $direccion, $telefono);
 			
 			// Populate bind variables
 			$statement->fetch();
@@ -116,7 +117,7 @@ class Personas {
 		$object->id = $id;
 		$object->nombre = $nombre;
 		$object->direccion = $direccion;
-		$object->fechaCreacion = $fechaCreacion;
+		$object->telefono = $telefono;
 		return $object;
 	}
 	
@@ -126,7 +127,7 @@ class Personas {
 		$affected_rows = FALSE;
 	
 		// Build database query
-		$sql = "insert into datos (nombre, direccion) values (?, ?)";
+		$sql = "insert into datos (nombre, direccion, telefono) values (?, ?, ?)";
 		
 		// Open database connection
 		$database = new Database();
@@ -138,7 +139,7 @@ class Personas {
 		if ($statement->prepare($sql)) {
 			
 			// Bind parameters
-			$statement->bind_param('ss', $this->nombre, $this->direccion);
+			$statement->bind_param('sss', $this->nombre, $this->direccion, $this->telefono);
 			
 			// Execute statement
 			$statement->execute();
@@ -163,7 +164,7 @@ class Personas {
 		$affected_rows = FALSE;
 	
 		// Build database query
-		$sql = "update datos set nombre = ?, direccion = ? where id = ?";
+		$sql = "update datos set nombre = ?, direccion = ?, telefono = ? where id = ?";
 		
 		// Open database connection
 		$database = new Database();
@@ -175,7 +176,7 @@ class Personas {
 		if ($statement->prepare($sql)) {
 			
 			// Bind parameters
-			$statement->bind_param('ssi', $this->nombre, $this->direccion, $this->id);
+			$statement->bind_param('sssi', $this->nombre, $this->direccion, $this->telefono, $this->id);
 			
 			// Execute statement
 			$statement->execute();
