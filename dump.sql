@@ -27,8 +27,9 @@ CREATE TABLE `datos` (
   `nombre` varchar(70) COLLATE utf8_spanish_ci DEFAULT NULL,
   `direccion` varchar(120) COLLATE utf8_spanish_ci DEFAULT NULL,
   `fechaCreacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `telefono` varchar(10) COLLATE utf8_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +38,7 @@ CREATE TABLE `datos` (
 
 LOCK TABLES `datos` WRITE;
 /*!40000 ALTER TABLE `datos` DISABLE KEYS */;
-INSERT INTO `datos` VALUES (1,'John Lennon','Abbey Road','2019-10-17 05:03:57'),(2,'Paul McCartney','Penny Lane','2019-10-17 03:04:09'),(3,'George Harrison','Strawberry Field','2019-10-17 03:04:09'),(4,'Ringo Starr','Octopus Garden','2019-10-17 03:04:09');
+INSERT INTO `datos` VALUES (1,'John Lennon','Abbey Road','2019-10-17 05:03:57',NULL),(2,'Paul McCartney','Penny Lane','2019-10-17 03:04:09',NULL),(3,'George Harrison','Strawberry Field','2019-10-17 03:04:09',NULL),(4,'Ringo Starr','Octopus Garden','2019-10-17 03:04:09',NULL);
 /*!40000 ALTER TABLE `datos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-17 18:25:32
+-- Dump completed on 2019-11-05  0:06:36
