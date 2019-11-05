@@ -31,7 +31,7 @@
 				      <th>Nombre</th>
 				      <th>Dirección</th>
 				      <th>Telefono</th>
-				      <th><button ng-click="add()" class="btn btn-success btn-sm"><i class="fa fa-file-o" aria-hidden="true"></i></button>&nbsp;Nuevo</th>
+				      <th><button id="btn-add" ng-click="add()" class="btn btn-success btn-sm"><i class="fa fa-file-o" aria-hidden="true"></i></button>&nbsp;Nuevo</th>
 				    </tr>
 				  </thead>
 				  <tbody>
@@ -58,28 +58,28 @@
 		                        <div class="form-group row">
 		                            <div id="personaId" class="col-md-3">
 		                                <label>Id Persona</label>
-		                                <input ng-model="persona.idPersona" class="form-control" disabled>
+		                                <input id="id" ng-model="persona.idPersona" class="form-control" disabled>
 		                            </div>
 		                            <div class="col-md-7">
 		                                <label>Nombre</label>
-		                                <input ng-model="persona.nombre" class="form-control" required>
+		                                <input id="nombre" ng-model="persona.nombre" class="form-control" required>
 		                            </div>
 		                        </div>
 		                        <div class="form-group row">
 		                            <div class="col-md-11">
 		                                <label>Dirección</label>
-		                                <input ng-model="persona.direccion" class="form-control" required>
+		                                <input id="direccion" ng-model="persona.direccion" class="form-control" required>
 		                            </div>
 		                        </div>
 		                        <div class="form-group row">
 		                            <div class="col-md-11">
 		                                <label>Telefono</label>
-		                                <input ng-model="persona.telefono" class="form-control" required>
+		                                <input id="telefono" ng-model="persona.telefono" class="form-control" required>
 		                            </div>
 		                        </div>
 		                    </div>
 		                    <div class="modal-footer">
-		                        <button type="submit" class="btn btn-primary">
+		                        <button id="btn-send" type="submit" class="btn btn-primary">
 		                        <span class="glyphicon glyphicon-floppy-disk"></span> Guardar
 		                        </button>
 		                        <button class="btn btn-secondary" data-dismiss="modal">
