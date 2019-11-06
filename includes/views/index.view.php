@@ -2,6 +2,7 @@
 
 	
 	<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/tooltip.js"></script>
